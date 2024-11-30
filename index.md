@@ -44,19 +44,59 @@ To run this package, the following Conda environment configuration is required: 
   - Model : [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/calculation_vp200_model.ipynb)
 
 ### 3. Analysis of Nino3.4 Index and Model Data
+The Conda environment required for the analysis is **env_all.yml**
   - Calculating the Correlation Coefficient
-Assess the relationship between the Nino3.4 index and the model's velocity potential.
+: Assess the relationship between the Nino3.4 index and the model's velocity potential.
   - Composites of Velocity Potential Anomalies for ENSO Phases
-Generate composite maps to identify the characteristic anomaly patterns during different ENSO phases.
-
-
+: Generate composite maps to identify the characteristic anomaly patterns during different ENSO phases.
 
 ## Results
-### 1. ENSO 
+### 1. Time Series of the Nino3.4 Index
+The figure below shows the time series of the Niño3.4 index during the analysis period from 1980 to 2014. The index clearly highlights periods of El Niño and La Niña events, which are characterized by positive and negative anomalies, respectively.
+
+Observed ENSO Events:
+  - El Niño years (red dots): 1983, 1987, 1992, 1995, 1998, 2010
+  - La Niña years (blue dots): 1985, 1989, 1999, 2000, 2008, 2011
+
+![Time series of the Nino3.4 index](figures/plot_ts_nino34.png)
+
+[Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_xy_ts_nina34.ipynb)
 
 
-### 2. 
+### 2. Correlation between Niño3.4 and Velocity Potential Anomalies
+This analysis was conducted to understand the relationship between the Niño3.4 index and the velocity potential. Specifically, we computed the correlation between the interannual variability of the Niño3.4 index and the interannual variability of velocity potential from both the model and ERA5 data.
+
+The figure below illustrates the correlation results. Significant positive correlations were observed near the Maritime Continent, while significant negative correlations appeared over the central and eastern tropical Pacific.
+
+During El Niño events (when the Niño3.4 index is strongly positive):
+  - The upper-level velocity potential over the western Pacific and the Maritime Continent tends to have positive values, indicating upper-level convergence, descending air, and drier conditions near the surface.
+  - Over the central and eastern Pacific, the upper-level velocity potential exhibits negative values, indicating upper-level divergence, ascending air, and enhanced precipitation.
+
+Model Performance: These patterns were well captured by the model, demonstrating its ability to simulate the spatial characteristics of velocity potential anomalies associated with ENSO phases.
+
+![Correlation between Niño3.4 and Velocity Potential Anomalies](figures/plot_map_corr_bw_nino34_models.png)
+
+[Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_corr_bw_model.ipynb)
 
 
-### 3.
+### 3. Composite Analysis of Velocity Potential Anomalies for ENSO Phases
+The velocity potential anomalies were composited for each ENSO phase: El Niño, La Niña, and Neutral. As expected based on theoretical understanding:
+  - During El Niño phases, descending air dominates over the Maritime Continent, indicated by upper-level convergence (positive velocity potential anomalies). In contrast, ascending air dominates over the central Pacific, represented by upper-level divergence (negative velocity potential anomalies).
+  - During La Niña phases, the convection system shifts westward, resulting in ascending motion (upper-level divergence) over the Maritime Continent and descending motion (upper-level convergence) along the central Pacific coastline.
+  - In Neutral conditions, these patterns are less pronounced and show no significant trends.
 
+**Comparison between ERA5 and Model**
+  - El Niño: The model shows stronger upper-level divergence over the central Pacific compared to ERA5.
+  - La Niña: The model exhibits more pronounced upper-level convergence (positive anomalies) around the central Pacific near 180° longitude, indicating stronger descending motion during La Niña phases.
+
+![Composite of Velocity Potential Anomalies for Each ENSO Phase](figures/plot_map_comp_anom_each_ph.png)
+
+
+
+![Composite Differences in Velocity Potential Anomalies during ENSO](figures/plot_map_comp_diff_anom.png)
+
+[Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_comp_anom_model.ipynb)
+
+
+
+## Summary
