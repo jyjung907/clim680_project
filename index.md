@@ -3,7 +3,7 @@
 
 
 ## Introduction
-El Niño and La Niña are significant climate phenomena characterized by changes in sea surface temperatures in the equatorial Pacific. During these periods, tropical Pacific convection differs significantly compared to average conditions. Convection activity can be analyzed using variables such as precipitation, outgoing longwave radiation (OLR), and velocity potential.
+El Niño and La Niña are significant climate phenomena characterized by changes in sea surface temperatures in the equatorial Pacific. During these periods, tropical Pacific convection differs significantly compared to average conditions. Convection activity can be analyzed using variables such as precipitation, outgoing longwave radiation, and velocity potential.
 
 In this study, I focus on the upper-level velocity potential to examine whether convection patterns during El Niño and La Niña are theoretically well represented. The velocity potential is an atmospheric variable that reflects the convergence and divergence of zonal winds, closely tied to strong convection. The velocity potential anomaly at 200 hPa is positive when cloud convection decreases and upper-level convergence dominates, while negative values indicate increased convection and upper-level divergence, making it useful for analyzing large-scale circulation patterns. It has been widely used to study climate phenomena such as the Madden-Julian Oscillation, El Niño-Southern Oscillation (ENSO), and Heavy Rainfall Extremes. Additionally, velocity potential reflects the intensity of cloud convection, which plays a critical role in the development of cumulonimbus clouds responsible for rainfall. (Hermawan et al., 2022).
 
@@ -129,10 +129,9 @@ Composite analyses revealed that during El Niño, descending motion (positive an
 
 
 ## References
-NOAA Physical Sciences Laboratory. "Climate Indices: Monthly Atmospheric and Ocean Time Series." Niño3.4 index derived from NOAA ERSST V5 anomalies. Available at: https://www.cpc.ncep.noaa.gov/data/indices/ersst5.nino.mth.91-20.ascii. 
 
 Hermawan, E., Maulana, T., Gernowo, R., Andarini, D.F. (2022). Effects of El-Nino and La-Nina on the Velocity Potential at 200 hPa over Maritime Continent. In: Yulihastin, E., Abadi, P., Sitompul, P., Harjupa, W. (eds) Proceedings of the International Conference on Radioscience, Equatorial Atmospheric Science and Environment and Humanosphere Science, 2021. Springer Proceedings in Physics, vol 275. Springer, Singapore. https://doi-org.mutex.gmu.edu/10.1007/978-981-19-0308-3_76
 
 Huang, B., C. Shin, J. Shukla, L. Marx, M. A. Balmaseda, S. Halder, P. Dirmeyer, and J. L. Kinter, 2017: Reforecasting the ENSO Events in the Past 57 Years (1958–2014). J. Climate, 30, 7669–7693, https://doi.org/10.1175/JCLI-D-16-0642.1.
 
-
+NOAA Physical Sciences Laboratory. "Climate Indices: Monthly Atmospheric and Ocean Time Series." Niño3.4 index derived from NOAA ERSST V5 anomalies. Available at: https://www.cpc.ncep.noaa.gov/data/indices/ersst5.nino.mth.91-20.ascii. 
