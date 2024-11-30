@@ -25,6 +25,17 @@ The primary variables used in this study are 200 hPa u and v wind components, fr
 ### 3. ERA5 Reanalysis
 To evaluate the performance of the model, the ERA5 reanalysis dataset was used as the reference. This dataset was obtained from CPC, and the variables used were 200 hPa u and v wind components. Since the ERA5 data is provided at an hourly resolution, it was converted to daily averages to align with the model data. Using these variables, the velocity potential was calculated for comparison with the model outputs.
 
+## Preliminary Analysis: Composite of Precipitation Rate Anomaly (2008)
+In a prior step, an analysis was conducted using model data for 2008 to composite the precipitation rate anomaly on a weekly scale. The objective was to examine tropical convection systems and their eastward propagation before calculating velocity potential.
+
+![composites of precipitation rate anomalies in 2008](figures/plot_map_multi_prate_wkly_2008.png)
+
+[Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_multi_prate.ipynb)
+
+> This code uses `xarray` functions to read model data, calculate anomalies, and composite the data on a weekly basis to analyze precipitation changes from week 1 to week 12. To better illustrate the east-west propagation, the panels were reordered to be drawn row-wise instead of the default column-wise arrangement by using `axes = axes.T.ravel()`.
+
+However, upon visualizing the results, it became evident that weekly averaging introduced significant noise, obscuring the key signals of interest. This made it challenging to identify meaningful patterns or focus areas within the convection systems. This limitation emphasized the need for alternative approaches to effectively capture relevant signals in tropical convection systems.
+
 ## Methods
 ### 1. Data Preprocessing
 The ERA5 data, originally in hourly resolution, was converted to daily resolution.
@@ -48,7 +59,7 @@ To run this package, the following Conda environment configuration is required: 
 > This code uses `xarray` to read grid-based u and v wind component data and calculates velocity potential using the `VectorWind` function. The calculated values are saved as a separate NetCDF file. To verify the results, a random date's data is visualized.
 
 ### 3. Analysis of Nino3.4 Index and Model Data
-The Conda environment required for the analysis is **env_all.yml**
+The Conda environment required for the analysis is **`env_all.yml`**
   - Calculating the Correlation Coefficient
 : Assess the relationship between the Nino3.4 index and the model's velocity potential.
   - Composites of Velocity Potential Anomalies for ENSO Phases
