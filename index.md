@@ -31,7 +31,7 @@ The ERA5 data, originally in hourly resolution, was converted to daily resolutio
 
 [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/convert2daily_era5.ipynb)
 
-This code uses `xarray` to read grid data and convert hourly data to daily averages using the `groupby` function. The resulting data is then saved as a NetCDF (`.nc`) file.
+> This code uses `xarray` to read grid data and convert hourly data to daily averages using the `groupby` function. The resulting data is then saved as a NetCDF (`.nc`) file.
 (Daily averages should use all 24-hour data points, but for simplicity, the average was calculated using only the 00, 06, 12, and 18 UTC time steps.)
 
 ### 2. Calculating Velocity Potential
@@ -45,7 +45,7 @@ To run this package, the following Conda environment configuration is required: 
 
   - Model : [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/calculation_vp200_model.ipynb)
 
-This code uses `xarray` to read grid-based u and v wind component data and calculates velocity potential using the `VectorWind` function. The calculated values are saved as a separate NetCDF file. To verify the results, a random date's data is visualized.
+> This code uses `xarray` to read grid-based u and v wind component data and calculates velocity potential using the `VectorWind` function. The calculated values are saved as a separate NetCDF file. To verify the results, a random date's data is visualized.
 
 ### 3. Analysis of Nino3.4 Index and Model Data
 The Conda environment required for the analysis is **env_all.yml**
@@ -66,7 +66,7 @@ Observed ENSO Events:
 
 [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_xy_ts_nina34.ipynb)
 
-This code uses `pandas` to read the Niño3.4 index file in ASCII format and extracts values for January from 1980 to 2014 to match the analysis period. Years with an index greater than 1 are identified as El Niño years, while those with an index less than -1 are classified as La Niña years. A time series graph is created to visualize the interannual variability of the index. Additional red and blue markers are added to the graph to indicate El Niño and La Niña years, respectively.
+> This code uses `pandas` to read the Niño3.4 index file in ASCII format and extracts values for January from 1980 to 2014 to match the analysis period. Years with an index greater than 1 are identified as El Niño years, while those with an index less than -1 are classified as La Niña years. A time series graph is created to visualize the interannual variability of the index. Additional red and blue markers are added to the graph to indicate El Niño and La Niña years, respectively.
 
 
 ### 2. Correlation between Niño3.4 and Velocity Potential Anomalies
@@ -84,7 +84,7 @@ Model Performance: These patterns were well captured by the model, demonstrating
 
 [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_corr_bw_model.ipynb)
 
-This code uses `pandas` to read the Niño3.4 index file. Additionally, for the model's grid data, I defined a new function (`get_anomaly`) to calculate anomalies. The function is applied separately to model and ERA5 data. Since the resolutions of the model and ERA5 differ, an interpolation function (`intp`) is defined to facilitate comparison. The daily data is averaged to monthly data, and the correlation coefficient with the Niño3.4 index is calculated using the `scipy.stats.pearsonr` function. Only regions with a 95% confidence level are highlighted in the results. Additionally, a new function (`set_latlon`) is defined to customize latitude and longitude ticks for plotting.
+> This code uses `pandas` to read the Niño3.4 index file. Additionally, for the model's grid data, I defined a new function (`get_anomaly`) to calculate anomalies. The function is applied separately to model and ERA5 data. Since the resolutions of the model and ERA5 differ, an interpolation function (`intp`) is defined to facilitate comparison. The daily data is averaged to monthly data, and the correlation coefficient with the Niño3.4 index is calculated using the `scipy.stats.pearsonr` function. Only regions with a 95% confidence level are highlighted in the results. Additionally, a new function (`set_latlon`) is defined to customize latitude and longitude ticks for plotting.
 
 
 ### 3. Composite Analysis of Velocity Potential Anomalies for ENSO Phases
@@ -108,7 +108,7 @@ To better understand the unique atmospheric characteristics of ENSO phases, the 
 
 [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_comp_anom_model.ipynb)
 
-This code uses `pandas` to read the Niño3.4 index file and identifies years classified as El Niño, La Niña, or Neutral phases. It applies the previously defined function (`get_anomaly`) to read model and ERA5 data, calculates monthly anomalies, and computes composites for each ENSO phase. Composite differences are calculated by subtracting Neutral phase composites from El Niño and La Niña composites. Only regions with a 95% confidence level are highlighted. The pre-defined function (`set_latlon`) for customizing latitude and longitude ticks is also utilized for plotting.
+> This code uses `pandas` to read the Niño3.4 index file and identifies years classified as El Niño, La Niña, or Neutral phases. It applies the previously defined function (`get_anomaly`) to read model and ERA5 data, calculates monthly anomalies, and computes composites for each ENSO phase. Composite differences are calculated by subtracting Neutral phase composites from El Niño and La Niña composites. Only regions with a 95% confidence level are highlighted. The pre-defined function (`set_latlon`) for customizing latitude and longitude ticks is also utilized for plotting.
 
 
 ## Summary
