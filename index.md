@@ -5,7 +5,8 @@
 ## Introduction
 El Niño and La Niña are significant climate phenomena characterized by changes in sea surface temperatures in the equatorial Pacific. During these periods, tropical Pacific convection differs significantly compared to average conditions. Convection activity can be analyzed using variables such as precipitation, outgoing longwave radiation (OLR), and velocity potential.
 
-In this study, I focus on the upper-level velocity potential to examine whether convection patterns during El Niño and La Niña are theoretically well represented. The velocity potential is a variable associated with strong convection. A positive Laplacian of Chi (the velocity potential) indicates upper-level convergence, while a negative Laplacian represents upper-level divergence. This variable allows for a straightforward analysis of the spatial distribution of convergence and divergence over large-scale horizontal fields.
+In this study, I focus on the upper-level velocity potential to examine whether convection patterns during El Niño and La Niña are theoretically well represented. The velocity potential is an atmospheric variable that reflects the convergence and divergence of zonal winds, closely tied to strong convection. The velocity potential anomaly at 200 hPa is positive when cloud convection decreases and upper-level convergence dominates, while negative values indicate increased convection and upper-level divergence, making it useful for analyzing large-scale circulation patterns. It has been widely used to study climate phenomena such as the Madden-Julian Oscillation, El Niño-Southern Oscillation (ENSO), and Heavy Rainfall Extremes. Additionally, velocity potential reflects the intensity of cloud convection, which plays a critical role in the development of cumulonimbus clouds responsible for rainfall. (Hermawan et al., 2022).
+
 
 ## Data
 ### 1. Niño 3.4 index
@@ -64,7 +65,7 @@ Observed ENSO Events:
 
 
 ### 2. Correlation between Niño3.4 and Velocity Potential Anomalies
-This analysis was conducted to understand the relationship between the Niño3.4 index and the velocity potential. Specifically, we computed the correlation between the interannual variability of the Niño3.4 index and the interannual variability of velocity potential from both the model and ERA5 data.
+This analysis was conducted to understand the relationship between the Niño3.4 index and the velocity potential. Specifically, I computed the correlation between the interannual variability of the Niño3.4 index and the interannual variability of velocity potential from both the model and ERA5 data.
 
 The figure below illustrates the correlation results. Significant positive correlations were observed near the Maritime Continent, while significant negative correlations appeared over the central and eastern tropical Pacific.
 
@@ -91,12 +92,27 @@ The velocity potential anomalies were composited for each ENSO phase: El Niño, 
 
 ![Composite of Velocity Potential Anomalies for Each ENSO Phase](figures/plot_map_comp_anom_each_ph.png)
 
+To better understand the unique atmospheric characteristics of ENSO phases, the composite differences are calculated by subtracting the Neutral state from the El Niño and La Niña phases.This approach highlights the anomalies directly associated with ENSO events, isolating the influence of El Niño and La Niña from the average climatological state. By focusing on these differences, the figure below illustrates the composite differences in velocity potential anomalies during El Niño and La Niña phases compared to Neutral conditions.
 
+  - El Niño Phase : Significant negative anomalies over the Pacific Ocean are clearly observed. In the model data, these anomalies cover a broader latitudinal range and exhibit greater intensity compared to ERA5. Positive anomalies appear around the Maritime Continent, indicating upper-level convergence. However, in the model, these positive anomalies are relatively weaker and shifted slightly southward from the equator compared to ERA5.
+  - La Niña Phase : In ERA5, significant positive anomalies (upper-level convergence) are observed near 180° longitude and the eastern Pacific, reflecting strong descending motion in these regions. The model shows larger and stronger positive anomalies near 180° longitude compared to ERA5. While positive anomalies are present over the eastern Pacific, they are not statistically significant at the 95% confidence level in the t-test.
 
 ![Composite Differences in Velocity Potential Anomalies during ENSO](figures/plot_map_comp_diff_anom.png)
 
 [Jupyter notebook link](https://github.com/jyjung907/clim680_project/blob/main/plt_map_comp_anom_model.ipynb)
 
 
-
 ## Summary
+This study assessed the performance of a seasonal reforecast model in simulating velocity potential anomalies during ENSO phases, with the Niño3.4 index serving as an indicator of El Niño and La Niña events. Velocity potential, a key atmospheric variable, was used to analyze upper-level convergence and divergence patterns, providing insights into ENSO-related convection dynamics. The time series analysis of the Niño3.4 index from 1980 to 2014 identified significant El Niño and La Niña events, forming the basis for subsequent analyses. Correlation results showed positive anomalies over the Maritime Continent and negative anomalies over the central and eastern Pacific, consistent with theoretical expectations. The model successfully reproduced these patterns, though with discrepancies in intensity and spatial distribution compared to ERA5.
+
+Composite analyses revealed that during El Niño, descending motion (positive anomalies) dominated over the Maritime Continent, while ascending motion (negative anomalies) prevailed over the central Pacific. La Niña showed a westward-shifted convection system with opposite patterns. Subtracting Neutral composites further highlighted ENSO-driven anomalies, showing upper-level divergence over the Pacific during El Niño and strong convergence during La Niña. While the model captured these features well, it overestimated anomaly intensities in certain regions. These findings demonstrate the model’s capability to replicate ENSO dynamics while identifying areas for improvement, emphasizing the utility of velocity potential as a diagnostic tool for model evaluation.
+
+
+## References
+NOAA Physical Sciences Laboratory. "Climate Indices: Monthly Atmospheric and Ocean Time Series." Niño3.4 index derived from NOAA ERSST V5 anomalies. Available at: https://www.cpc.ncep.noaa.gov/data/indices/ersst5.nino.mth.91-20.ascii. 
+
+Hermawan, E., Maulana, T., Gernowo, R., Andarini, D.F. (2022). Effects of El-Nino and La-Nina on the Velocity Potential at 200 hPa over Maritime Continent. In: Yulihastin, E., Abadi, P., Sitompul, P., Harjupa, W. (eds) Proceedings of the International Conference on Radioscience, Equatorial Atmospheric Science and Environment and Humanosphere Science, 2021. Springer Proceedings in Physics, vol 275. Springer, Singapore. https://doi-org.mutex.gmu.edu/10.1007/978-981-19-0308-3_76
+
+Huang, B., C. Shin, J. Shukla, L. Marx, M. A. Balmaseda, S. Halder, P. Dirmeyer, and J. L. Kinter, 2017: Reforecasting the ENSO Events in the Past 57 Years (1958–2014). J. Climate, 30, 7669–7693, https://doi.org/10.1175/JCLI-D-16-0642.1.
+
+
